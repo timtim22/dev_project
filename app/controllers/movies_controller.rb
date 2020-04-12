@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
 	def create
 		@movie = Movie.new(movie_params)
 		if @movie.save
-			flash[:success] = "Movie is shared with your friends"
+			flash[:notice] = "Movie is shared with your friends"
 			redirect_to movies_path
 		else
 			render 'new'
