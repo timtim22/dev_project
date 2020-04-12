@@ -2,6 +2,7 @@ require 'test_helper'
 
 class MovieTest < ActiveSupport::TestCase
 
+
 	def setup
 		@movie = Movie.new(url: "Titanic")
 	end
