@@ -2,4 +2,8 @@
 
 * Unit Testing - Controller and Model
 
-* Integration Testing
+* Added Integration Testing
+
+* Added Validations
+
+* Added Authentications

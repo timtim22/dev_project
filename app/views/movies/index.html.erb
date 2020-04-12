@@ -1,6 +1,12 @@
-<h1> Listing All Movies </h1>
+<% if user_signed_in? %>
+  <h1> Listing All Movies </h1>
 	<%= @movies.each do |movie| %>
 		<div class="embed-responsive embed-responsive-16by9">
 			<iframe class="embed-responsive-item" src='https://www.youtube.com/embed/<%=YouTubeAddy.extract_video_id(movie.url)%>'allowfullscreen></iframe>
 		</div>
 	<% end %>
+<%else %>
+  <p>Please Register or Login to share movies with your friends.</p>
+
+<% end %>
+

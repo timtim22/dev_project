@@ -1,23 +1,29 @@
-<h1> Share a Movie </h1>
+<% if user_signed_in? %>
 
-<% if @movie.errors.any? %>
-	<h2> Please correct following errors</h2>
-	<ul>
-		<% @movie.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
-	</ul>
-<% end %>
+  <h1> Share a Movie </h1>
+
+  <% if @movie.errors.any? %>
+  	<h2> Please correct following errors</h2>
+  	<ul>
+  		<% @movie.errors.full_messages.each do |msg| %>
+  			<li><%= msg %></li>
+  		<% end %>
+  	</ul>
+  <% end %>
 
 
-<%= form_for(@movie) do |form| %>
-  
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url %>
-  </div>
+  <%= form_for(@movie) do |form| %>
+    
+    <div class="field">
+      <%= form.label :url %>
+      <%= form.text_field :url %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+<% else %>
+<p>Please Register or Login to share movies with your friends.</p>
+
 <% end %>
