@@ -1,5 +1,14 @@
 <h1> Share a Movie </h1>
 
+<% if @movie.errors.any? %>
+	<h2> Please correct following errors</h2>
+	<ul>
+		<% @movie.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
 
 <%= form_for(@movie) do |form| %>
   
