@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class MoviesControllerTest < ActionDispatch::IntegrationTest
+
+
 	def setup
-		@movie = Movie.create(url: 'Titanic')
+		@movie = Movie.create(url: "Titanic")
 	end
 
 
@@ -15,5 +17,6 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
 		get new_movie_path
 		assert_response :success
 	end
+
 
 end

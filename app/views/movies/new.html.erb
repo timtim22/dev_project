@@ -1,0 +1,14 @@
+<h1> Share a Movie </h1>
+
+
+<%= form_for(@movie) do |form| %>
+  
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
