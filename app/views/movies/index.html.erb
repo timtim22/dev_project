@@ -1,12 +1,32 @@
-<% if user_signed_in? %>
-  <h1> Listing All Movies </h1>
-	<%= @movies.each do |movie| %>
-		<div class="embed-responsive embed-responsive-16by9">
-			<iframe class="embed-responsive-item" src='https://www.youtube.com/embed/<%=YouTubeAddy.extract_video_id(movie.url)%>'allowfullscreen></iframe>
-		</div>
-	<% end %>
-<%else %>
-  <p>Please Register or Login to share movies with your friends.</p>
-
-<% end %>
+<% unless user_signed_in? %>
+	<div class="alert alert-warning" style="width: 30rem;" role="alert">
+	  <p>Please Register or Login to share movies with your friends.</p>
+	</div>
+<% end %>	
+	<div align="center">
+		<%= will_paginate %>
+	</div>
+		<%= @movies.each do |movie| %>
+			<p><div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-3 col-md-6 col-lg-4">
+						<div class="embed-responsive embed-responsive-4by3" style="width: 18rem;">
+						  <iframe class="embed-responsive-item" src='https://www.youtube.com/embed/<%=YouTubeAddy.extract_video_id(movie.url)%>'allowfullscreen>
+						  </iframe>
+						</div>
+					</div>
+					<div class="col-sm-9 col-md-6 col-lg-8">
+						<% video = Yt::Video.new id: YouTubeAddy.extract_video_id(movie.url) %>
+						<b><%= video.title %></b>
+						<br><i>shared by: <%= movie.user.email if movie.user %></i>
+						<br>Description: <br><p><%= video.description %></p>
+						
+					</div>
+					
+				</div>
+			</div></p>
+		<% end %>
+	<div align="center">
+		<%= will_paginate %>
+	</div>
 

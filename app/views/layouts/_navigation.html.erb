@@ -1,0 +1,23 @@
+
+<div class="container">
+  <a class="navbar-brand "><h1>Funny Movies</h1></a>
+  <form class="form-inline">
+      <% if current_user %>
+        <div class = "text-info mr-5">
+          Welcome <%= current_user.email %>
+        </div>
+        <%= link_to "Share a Movie", new_movie_path, 
+        class: "btn btn-outline-success my-2 my-sm-0 mr-2", type: "submit" %>
+
+        <%= link_to "Logout", destroy_user_session_path, 
+                  method: :delete, class: "btn btn-outline-danger my-2 my-sm-0", type: "submit" %>
+
+       <% else %>
+
+        <%= link_to "Login", new_user_session_path, 
+                                    class: "btn btn-outline-success my-2 my-sm-0 mr-2", type: "submit" %>
+        <%= link_to "Register", new_user_registration_path, 
+                                    class: "btn btn-outline-success my-2 my-sm-0", type: "submit" %>
+      <% end %>
+  </form>
+</div>
