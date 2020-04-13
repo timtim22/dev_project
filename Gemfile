@@ -36,6 +36,13 @@ gem 'rails-controller-testing', '~> 0.0.3'
 gem 'valid_url'
 gem 'youtube_addy', '~> 1.0', '>= 1.0.4'
 gem 'devise', '~> 4.2'
+gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
+gem 'yt', '~> 0.25.38'
+gem 'google-api-client', '~> 0.7.1'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'bootstrap-will_paginate', '~> 1.0'
+gem 'will_paginate-bootstrap4'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

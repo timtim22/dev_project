@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
-
 	def index
-		@movies = Movie.all
+		@movies = Movie.paginate(page: params[:page], per_page: 10)
 	end
 
 	def new
@@ -9,7 +8,7 @@ class MoviesController < ApplicationController
 	end
 
 	def create
-		@movie = Movie.new(movie_params)
+		@movie = current_user.movies.new(movie_params)
 		if @movie.save
 			flash[:notice] = "Movie is shared with your friends"
 			redirect_to movies_path
@@ -17,7 +16,6 @@ class MoviesController < ApplicationController
 			render 'new'
 		end
 	end
-
 
 
 	private

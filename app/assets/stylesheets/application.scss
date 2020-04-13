@@ -1,0 +1,67 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap";
+
+.card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+        margin-top: 50px;
+}
+
+.btn1 {
+	
+	display: table;
+	margin: 0 auto;
+	width:100%;
+}
+
+.navbar-brand {
+    
+    font-family: Chalkduster, fantasy;
+}
+
+.p11 {
+    text-align: center;
+    padding-top: 50px;
+    font-family: Marker Felt, fantasy;
+}
+
+.pagination {
+    font-size: 12px;
+    margin: 0 auto;
+}
+
+.pagination > * {
+    margin-right: 0.1em;
+    padding: 0.3em 0.4em;
+}
+
+
+.pagination a:active {
+    text-shadow: none;
+}
+
+.pagination .current {
+    background: #202020 none repeat scroll 0 0;
+    color: white;
+    text-shadow: 1px 1px 1px #171717;
+}
+
+.pagination .disabled {
+    color: #C0C0C0;
+}
