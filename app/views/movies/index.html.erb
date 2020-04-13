@@ -3,10 +3,10 @@
 	  <p>Please Register or Login to share movies with your friends.</p>
 	</div>
 <% end %>	
-	<div align="center">
+	<div class="paginate">
 		<%= will_paginate %>
 	</div>
-		<%= @movies.each do |movie| %>
+		<% @movies.each do |movie| %>
 			<p><div class="container-fluid">
 				<div class="row">
 					<div class="col-sm-3 col-md-6 col-lg-4">
@@ -20,13 +20,11 @@
 						<b><%= video.title %></b>
 						<br><i>shared by: <%= movie.user.email if movie.user %></i>
 						<br>Description: <br><p><%= video.description %></p>
-						
 					</div>
-					
 				</div>
 			</div></p>
 		<% end %>
-	<div align="center">
+	<div class="paginate">
 		<%= will_paginate %>
 	</div>
 
